@@ -1,0 +1,33 @@
+/* .new-tweet {
+  /* width: 90%;
+  margin: auto;
+  display: flex */
+.new-tweet {
+  justify-content: space-between;
+}
+
+.enterBox {
+display: flex;
+flex-direction: column;
+margin-top: 1em;
+border-bottom-width: thick;
+
+}
+
+.submitAndCounter {
+  margin-top: 0.4em;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Bungee', cursive;
+
+}
+
+button {
+  background-color: #4056A1; 
+  border-color: #4056A1;
+  color: #FFFFFF;
+}
+
+
+
+
