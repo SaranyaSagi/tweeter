@@ -1,9 +1,9 @@
 $(document).ready(function() {
  
-  $("#tweet-text").on( "input", function(event) {
+  $("#tweet-text").on("input", function(event) {
     //get value of text that user enters - use "this"
-    //get text.length and subtract this value from 140.
     $text = $(this).val();
+    //get text.length and subtract this value from 140.
     $charsLeft = 140 - $text.length;
 
     //go to parent element (form) and find the respective counter
@@ -14,12 +14,12 @@ $(document).ready(function() {
     //if charsLeft < 0 going into -values
     //add a class to the counter that change the font color to red
     //else remove class to undo red.
-    //fontred in css 
     if ($charsLeft < 0) {
       $counter.addClass("fontRed");
     } else {
       $counter.removeClass("fontRed");
     }
+    //fontred in css 
 
   });
 });
