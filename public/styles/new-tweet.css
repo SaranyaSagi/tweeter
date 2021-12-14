@@ -1,17 +1,20 @@
-/* .new-tweet {
-  /* width: 90%;
-  margin: auto;
-  display: flex */
 .new-tweet {
   justify-content: space-between;
 }
 
 .enterBox {
-display: flex;
-flex-direction: column;
-margin-top: 1em;
-border-bottom-width: thick;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1em;
+}
 
+textarea {
+  border-style: none; 
+  background: none;
+  border-bottom: solid;
+  height: 40px;
+  border-bottom-color: #545149;
+    
 }
 
 .submitAndCounter {
@@ -26,6 +29,10 @@ button {
   background-color: #4056A1; 
   border-color: #4056A1;
   color: #FFFFFF;
+}
+
+label {
+  font-weight: bold;
 }
 
 
