@@ -1,0 +1,40 @@
+nav {
+  position: fixed;
+  top: 0;
+  height: 120px;
+  width: 100%;
+  background-color: #4056A1; 
+  color: #FFFFFF;
+  /* top right bottom left */
+  padding: 0 1.5em;
+  justify-content: space-between;
+  display: flex;
+  position: relative;
+}
+
+nav span {
+  font-family: 'Bungee', cursive;
+  margin-top: 1em;
+  font-size: 1.5em;
+  margin-bottom: 0px;
+}
+
+.sideHeader {
+  display: flex;
+  flex-direction: column;
+}
+
+.sideHeaderText {
+  margin-bottom: 0px;
+} 
+.fas {
+  margin-left: 3em;
+  margin-bottom: 1em;
+  color: red;
+}
+
+main {
+  width: 90%;
+  margin: auto;
+
+}
