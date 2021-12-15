@@ -1,3 +1,9 @@
+/* in order of html for most part */
+main {
+  width: 90%;
+  margin: auto;
+}
+
 .new-tweet {
   justify-content: space-between;
 }
@@ -8,13 +14,17 @@
   margin-top: 1em;
 }
 
+/* What are you humming about? */
+label {
+  font-weight: bold;
+}
+
 textarea {
   border-style: none; 
   background: none;
   border-bottom: solid;
   height: 40px;
   border-bottom-color: #545149;
-    
 }
 
 .submitAndCounter {
@@ -22,7 +32,6 @@ textarea {
   display: flex;
   justify-content: space-between;
   font-family: 'Bungee', cursive;
-
 }
 
 button {
@@ -31,13 +40,13 @@ button {
   color: #FFFFFF;
 }
 
-label {
-  font-weight: bold;
+/* extra addition */
+button:hover {
+  background-color: #556bb6;
+  box-shadow: 4px 5px #888888;
 }
 
+/* from compose-char-count if statement */
 .fontRed {
   color: red;
 }
-
-
-
