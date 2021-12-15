@@ -6,6 +6,23 @@
 
 $(document).ready(() => {  
 
+  const fetchPage = () => {
+    $.ajax({
+      url: '/tweets/',
+      method: 'GET',
+      dataType: 'json',
+      success: (tweets) => {
+        console.log(tweets)
+        renderTweets(tweets);
+
+      },
+      error: (err) => {
+        console.log(`error: ${err}`)
+      }
+    })
+  };
+  fetchPage();
+
   const data = [
     {
       "user": {
@@ -35,9 +52,10 @@ $(document).ready(() => {
     //loops through tweets - for of loop 
     //calls createTweetElement for each tweet
     //takes return value and appends it to the tweets container. 
-    
+    const $tweetsContainer = $('#tweets-container');
+    $tweetsContainer.empty();
     for (let tweet of tweets) {
-      $('#tweets-container').append(createTweetElement(tweet));
+      $tweetsContainer.prepend(createTweetElement(tweet));
     };
   }
 
@@ -64,8 +82,19 @@ $(document).ready(() => {
       </footer>
     </article>`);
     
- return $tweet
-};
+  return $tweet
+  };
+  
+  $("#tweetForm").submit(function(event) {
+    
+    event.preventDefault();
+    const serializedData = $(this).serialize();
+  
+    $.post('/tweets/', serializedData, (response) => {
+      console.log(response)  //Check if this should be removed.
+      fetchPage();
+    })
 
-renderTweets(data);
+  });
+
 });
