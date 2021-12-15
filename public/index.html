@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweetArticle.css" type="text/css" />
 
 
     <!-- Font awesome library -->
@@ -43,21 +44,17 @@
     </nav>
 
     <!-- header with image(center) and name (end) -->
-    <header>
+    <header class="topHeader">
       <div>
           <img src="/images/profile-hex.png"> 
       </div>
-      <br>
       <div>
-          <h2>Saranya Sagi</h2>
+          <h2 class="mainName"><strong>Saranya</strong> Sagi</h2>
       </div>
   </header>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <!-- <h1>this is main and it's centered</h1> -->
-      <!-- <p>The tweets will eventually appear here. For now add content to see how it looks</p> -->
-
       <section class="new-tweet">
         <!-- <h2>Compose Tweet</h2> -->
         <form Content-Type="application/x-www-form-urlencoded" action="/tweets/" method="POST">
@@ -71,6 +68,30 @@
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
+      </section>
+
+      <section id="tweets-container">
+        <article>
+          <header>
+            <div class="topDiv">
+              <div class="div1">
+                <img src="images/maleprofile.png">
+                <h2>Newton</h2>
+              </div>
+              <span>@SidSaran</span>
+            </div>
+            <br/>
+            <div class="bodytext">If i have seen further it is by standing on the shoulder of giants!</div>
+          </header>
+          <footer>
+            <span> 10 days ago </span>
+            <div class="options">
+              <span><i class="fas fa-flag"></i></span>
+              <span><i class="fas fa-retweet"></i></span>
+              <span><i class="fas fa-heart"></i></span>
+            </div>
+          </footer>
+        </article>
       </section>
 
     </main>
