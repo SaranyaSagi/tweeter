@@ -1,15 +1,18 @@
+/* Top blue header bar */
+
 nav {
+  /* has to be overlayed on orange header */
   position: fixed;
   top: 0;
-  height: 120px;
+  /* the height on compass said 120 but 100 looks better */
+  height: 100px;
   width: 100%;
   background-color: #4056A1; 
   color: #FFFFFF;
-  /* top right bottom left */
+  /* can include 4 parts for padding - top right bottom left */
   padding: 0 1.5em;
   justify-content: space-between;
   display: flex;
-  position: relative;
 }
 
 nav span {
@@ -27,13 +30,9 @@ nav span {
 .sideHeaderText {
   margin-bottom: 0px;
 } 
-.fas {
+.fa-angle-double-down{
   margin-left: 3em;
   margin-bottom: 1em;
   color: red;
 }
 
-main {
-  width: 90%;
-  margin: auto;
-}
