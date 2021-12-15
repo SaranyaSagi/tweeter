@@ -1,0 +1,87 @@
+/* in order of html for the most part*/
+article {
+  display: flex;
+  flex-direction: column;
+  border: solid;
+  padding: 0.65em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  height: 200px;
+}
+
+article > header {
+  display: flex;
+  background: none;
+  border-bottom: solid;
+  height: 200px;
+}
+
+.topDiv {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+article > header > div > .div1 {
+  display: flex;
+}
+article > header > div >.div1 > img{
+  height: 40px;
+}
+
+article > header > div >.div1 > h2{
+  margin-top: 7px;
+  font-family: none;
+  font-size: inherit;
+  margin-left: 8px;
+  font-weight: 100;
+  font-style: normal;
+}
+
+article > header > div > span{
+  color: #b1b8bb;
+  font-family: none;
+}
+
+.bodytext {
+  font-family: none;
+  width: 100%
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+footer > span{
+  font-size: small;
+  margin-top: 5px;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  width: 60px;
+  
+  margin-top: 7px;
+  font-size: small;
+  color: #4056A1;
+}
+
+
+/* Hovers and box-shadow */
+article:hover {
+  box-shadow: 5px 7px #888888
+}
+
+.fa-flag:hover{
+  color: orange;
+}
+
+.fa-retweet:hover{
+  color: orange;
+}
+
+.fa-heart:hover{
+  color:orange;
+}
