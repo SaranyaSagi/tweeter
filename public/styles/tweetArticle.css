@@ -45,12 +45,16 @@ article > header > div > span{
 
 .bodytext {
   font-family: none;
-  width: 100%
+  width: 100%;
+  /* margin-bottom: 10px; */
+  font: message-box;
+  font-size: smaller;
 }
 
 footer {
   display: flex;
   justify-content: space-between;
+  /* padding-bottom: 20px */
 }
 
 footer > span{
