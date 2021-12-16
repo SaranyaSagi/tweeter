@@ -86,8 +86,10 @@ $(document).ready(() => {
 
     if ($text === "" || $text === null) {
       $message.text("⚠️ Your message is empty, try again").slideDown();
+      $textarea.focus();
     } else if ($textLength > 140) {
       $message.text("⚠️ Message is too long, please respect text limit").slideDown();
+      $textarea.focus();
     } else {
       $.post('/tweets', $serializedData, (response) => {
             //console.log(response)  //Check if this should be removed.
@@ -95,6 +97,8 @@ $(document).ready(() => {
             $("#tweet-text").val("")
       })
       $message.hide();
+      $textarea.val("").focus();
+      $counter.text("140");
     }
   
   });
