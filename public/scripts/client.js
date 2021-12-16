@@ -6,47 +6,45 @@
 
 $(document).ready(() => {  
 
-  const fetchPage = () => {
+  const loadtweets = () => {
     $.ajax({
-      url: '/tweets/',
+      url: '/tweets',
       method: 'GET',
       dataType: 'json',
       success: (tweets) => {
-        console.log(tweets)
         renderTweets(tweets);
-
       },
       error: (err) => {
         console.log(`error: ${err}`)
       }
     })
   };
-  fetchPage();
+  loadtweets();
 
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ]
+  // const data = [
+  //   {
+  //     "user": {
+  //       "name": "Newton",
+  //       "avatars": "https://i.imgur.com/73hZDYK.png"
+  //       ,
+  //       "handle": "@SirIsaac"
+  //     },
+  //     "content": {
+  //       "text": "If I have seen further it is by standing on the shoulders of giants"
+  //     },
+  //     "created_at": 1461116232227
+  //   },
+  //   {
+  //     "user": {
+  //       "name": "Descartes",
+  //       "avatars": "https://i.imgur.com/nlhLi3I.png",
+  //       "handle": "@rd" },
+  //     "content": {
+  //       "text": "Je pense , donc je suis"
+  //     },
+  //     "created_at": 1461113959088
+  //   }
+  // ]
   
   const renderTweets = function(tweets) {
     //loops through tweets - for of loop 
@@ -59,7 +57,14 @@ $(document).ready(() => {
     };
   }
 
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   const createTweetElement = function(tweet) {
+    
     let $tweet = (`<article>
       <header>
         <div class="topDiv">
@@ -70,7 +75,7 @@ $(document).ready(() => {
           <span>${tweet.user.handle}</span>
         </div>
         <br/>
-        <div class="bodytext">${tweet.content.text}</div>
+        <div class="bodytext">${escape(tweet.content.text)}</div>
       </header>
       <footer>
         <span>${timeago.format(tweet.created_at)}</span>
@@ -83,18 +88,55 @@ $(document).ready(() => {
     </article>`);
     
   return $tweet
-  };
+  };  
+
   
   $("#tweetForm").submit(function(event) {
     
     event.preventDefault();
     const serializedData = $(this).serialize();
-  
-    $.post('/tweets/', serializedData, (response) => {
-      console.log(response)  //Check if this should be removed.
-      fetchPage();
-    })
 
+    // $text = $(this).val();
+    // $textLength = $text.length;
+    
+    // console.log("text: ",$text);
+    // console.log(serializedData);
+
+    // if ($text === "" || $text === null) {
+    //   return alert("Message is empty, please type something to post");
+    // } else if ($textLength > 140) {
+    //   return alert("Message is too long, please respect text limit");
+    // } else {
+    //   $.post('/tweets', serializedData, (response) => {
+    //     console.log(response)  //Check if this should be removed.
+    //     loadtweets();
+    //     $("#tweet-text").val("")
+    //   })
+    // }
+
+    $text = serializedData;
+    $textLength = $text.length;
+    
+    console.log("text: ",$text);
+    console.log(serializedData);
+
+    if ($text === "text=" || $text === null) {
+      return alert("Message is empty, please type something to post");
+    } else if ($textLength > 140) {
+      return alert("Message is too long, please respect text limit");
+    } else {
+      $.post('/tweets', serializedData, (response) => {
+        console.log(response)  //Check if this should be removed.
+        loadtweets();
+        $("#tweet-text").val("")
+      })
+    }
+  
   });
 
 });
+
+///-----Fix hack----ifspaceonly-it still posts/ 
+ // else if ($text === "text") {
+    //   return alert("Message is empty, please type something to post");
+    // } 
