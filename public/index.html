@@ -58,11 +58,16 @@
     <main class="container">
       <section class="new-tweet">
         <!-- <h2>Compose Tweet</h2> -->
-        <form Content-Type="application/x-www-form-urlencoded" action="/tweets/" method="POST">
+        <!-- action="/tweets/" method="POST" -->
+        <form id="tweetForm" Content-Type="application/x-www-form-urlencoded">
+          <!-- alert/flash message -->
+          <p id="message"></p>
+
          <div class="enterBox">
            <label for="tweet-text">What are you humming about?</label>
            <textarea name="text" id="tweet-text" ></textarea>
          </div>
+
 
           <div class="submitAndCounter">
             <button type="submit">Tweet</button>
