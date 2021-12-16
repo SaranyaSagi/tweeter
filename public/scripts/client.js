@@ -6,6 +6,7 @@
 
 $(document).ready(() => {  
 
+  //fetch data
   const loadtweets = () => {
     $.ajax({
       url: '/tweets',
@@ -65,37 +66,62 @@ $(document).ready(() => {
   return $tweet
   };  
 
+  //access message and keep it hidden before submit is pressed
   $message = $("#message");
   $message.hide();
 
   $("#tweetForm").submit(function(event) {
     
     event.preventDefault();
-    const serializedData = $(this).serialize();
 
-    $text = serializedData;
-    $textLength = $text.length;
+    //---get data from form
+    $textarea = $(this).closest("form").find("textarea");
+    $counter = $(this).closest("form").find(".counter");
+    $message = $("#message");
+
+    $serializedData = $textarea.serialize();
     
-    // console.log("text: ",$text);
-    // console.log(serializedData);
+    $text = $textarea.val().trim();
+    $textLength = $text.length;
 
-    console.log($textLength);
-    if ($text === "text=" || $text === null) {
-      // return alert("Message is empty, please type something to post");
+    if ($text === "" || $text === null) {
       $message.text("⚠️ Your message is empty, try again").slideDown();
-
     } else if ($textLength > 140) {
-      // return alert("Message is too long, please respect text limit");
       $message.text("⚠️ Message is too long, please respect text limit").slideDown();
     } else {
-      console.log("something")
-      $.post('/tweets', serializedData, (response) => {
-        console.log(response)  //Check if this should be removed.
-        loadtweets();
-        $("#tweet-text").val("")
+      $.post('/tweets', $serializedData, (response) => {
+            //console.log(response)  //Check if this should be removed.
+            loadtweets();
+            $("#tweet-text").val("")
       })
+      $message.hide();
     }
   
   });
 
 });
+
+// const serializedData = $(this).serialize();
+
+    // $text = serializedData.trim();
+    // $textLength = $text.length;
+    
+    // // console.log("text: ",$text);
+    // // console.log(serializedData);
+
+    // console.log($textLength);
+    // if ($text === "text=" || $text === null) {
+    //   // return alert("Message is empty, please type something to post");
+    //   $message.text("⚠️ Your message is empty, try again").slideDown();
+
+    // } else if ($textLength > 140) {
+    //   // return alert("Message is too long, please respect text limit");
+    //   $message.text("⚠️ Message is too long, please respect text limit").slideDown();
+    // } else {
+    //   // console.log("something")
+    //   $.post('/tweets', serializedData, (response) => {
+    //     console.log(response)  //Check if this should be removed.
+    //     loadtweets();
+    //     $("#tweet-text").val("")
+    //   })
+    // }
