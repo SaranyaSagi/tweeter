@@ -12,16 +12,17 @@ Javascript used to safely render insecure text by escaping XSS.The best part is 
 ## Final Product
 
 ![Normal Tweet in responsive layout](https://github.com/SaranyaSagi/tweeter/blob/master/docs/ezgif.com-gif-maker.gif?raw=true)
-###👆 Valid tweet posted with time displayed through timeago.
+
+### 👆Valid tweet posted with time displayed through timeago.
 
 !["Desktop layout screenshot"](https://github.com/SaranyaSagi/tweeter/blob/master/docs/Desktop_fit.png?raw=true)
-###👆 Desktop Layout with animated toggle button and invalid tweet error message.
+### 👆Desktop Layout with styled navigation bar!
 
 ![Error message](https://github.com/SaranyaSagi/tweeter/blob/master/docs/error.gif?raw=true)
-###👆 Slide down error message in responsive layout!
+### 👆New tweet toggle button, counter and slide down error message for invalid tweet!
 
 ![Toggle button and scroll to top button](https://github.com/SaranyaSagi/tweeter/blob/master/docs/ezgif.com-gif-maker%20(2).gif?raw=true)
-###👆Hover effects and scroll to top button
+### 👆Hover effects and scroll to top button
 
 ## Dependencies
 
