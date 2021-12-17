@@ -1,6 +1,6 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone.
+➡️ Tweeter is a simple, single-page Twitter clone.
 
 Having been provided with starter code, was able to build upon it using front end skills such as HTML, CSS, JS, jQuery, AJAX and Node, Express back-end skills. 
 
@@ -12,13 +12,16 @@ Javascript used to safely render insecure text by escaping XSS.The best part is 
 ## Final Product
 
 ![Normal Tweet in responsive layout](https://github.com/SaranyaSagi/tweeter/blob/master/docs/ezgif.com-gif-maker.gif?raw=true)
-
-![Toggle button and scroll to top button](https://github.com/SaranyaSagi/tweeter/blob/master/docs/ezgif.com-gif-maker%20(2).gif?raw=true)
+###👆 Valid tweet posted with time displayed through timeago.
 
 !["Desktop layout screenshot"](https://github.com/SaranyaSagi/tweeter/blob/master/docs/Desktop_fit.png?raw=true)
+###👆 Desktop Layout with animated toggle button and invalid tweet error message.
 
-![Error message](https://github.com/SaranyaSagi/tweeter/blob/master/docs/ezgif.com-gif-maker%20(1).gif?raw=true)
+![Error message](https://github.com/SaranyaSagi/tweeter/blob/master/docs/error.gif?raw=true)
+###👆 Slide down error message in responsive layout!
 
+![Toggle button and scroll to top button](https://github.com/SaranyaSagi/tweeter/blob/master/docs/ezgif.com-gif-maker%20(2).gif?raw=true)
+###👆Hover effects and scroll to top button
 
 ## Dependencies
 
