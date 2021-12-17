@@ -1,4 +1,6 @@
-/* in order of html for the most part*/
+/* in order as seen in html for the most part*/
+/*will use class or id names instead of > next time */
+
 article {
   display: flex;
   flex-direction: column;
@@ -24,6 +26,7 @@ article > header {
 article > header > div > .div1 {
   display: flex;
 }
+
 article > header > div >.div1 > img{
   height: 40px;
 }
@@ -45,7 +48,6 @@ article > header > div > span{
 .bodytext {
   font-family: none;
   width: 100%;
-  /* margin-bottom: 10px; */
   font: message-box;
   font-size: smaller;
 }
@@ -53,7 +55,6 @@ article > header > div > span{
 footer {
   display: flex;
   justify-content: space-between;
-  /* padding-bottom: 20px */
 }
 
 footer > span{
@@ -71,8 +72,7 @@ footer > span{
   color: #4056A1;
 }
 
-
-/* Hovers and box-shadow */
+/* Hovers and box-shadow for each tweet */
 article:hover {
   box-shadow: 5px 7px #888888
 }
