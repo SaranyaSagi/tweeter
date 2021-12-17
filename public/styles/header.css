@@ -1,7 +1,10 @@
 /* Orange header with profile and name */
 header {
+  /* padding-top: 1em; */
+  /* padding-bottom: 5em;
+  margin-bottom: 5em; */
   /* height: 450px;  */
-  height: 350px;
+  height: 400px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -10,9 +13,8 @@ header {
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
 }
 
-.topHeader {
-  /* padding-top: 120px */
-  padding-top: 20px
+#hexagon{
+  margin-top: 70px;
 }
 
 /* The name displayed under big profile pic */
@@ -20,6 +22,7 @@ header {
   margin-top: 0px;
   font-family: none;
   font-weight: 500;
+  color: white
 }
 
 #message {
