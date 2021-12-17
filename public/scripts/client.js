@@ -4,7 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$(document).ready(() => {  
+$(document).ready(() => {
 
   //fetch data
   const loadtweets = () => {
@@ -16,24 +16,25 @@ $(document).ready(() => {
         renderTweets(tweets);
       },
       error: (err) => {
-        console.log(`error: ${err}`)
+        console.log(`error: ${err}`);
       }
-    })
+    });
   };
   loadtweets();
   
   const renderTweets = function(tweets) {
-    //loops through tweets - for of loop 
+    //loops through tweets - for of loop
     //calls createTweetElement for each tweet
-    //takes return value and appends it to the tweets container. 
+    //takes return value and appends it to the tweets container.
     const $tweetsContainer = $('#tweets-container');
     $tweetsContainer.empty();
     for (let tweet of tweets) {
       $tweetsContainer.prepend(createTweetElement(tweet));
-    };
-  }
+    }
+  };
 
-  const escape = function (str) {
+  //prevent hack trough textbox code
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
@@ -63,8 +64,17 @@ $(document).ready(() => {
       </footer>
     </article>`);
     
-  return $tweet
-  };  
+    return $tweet;
+  };
+
+  // Enable textarea automatically
+  $(".new-tweet").find("textarea").focus();
+
+  // Compose button functionality for enabling new tweet section.
+  $("#composeButton").on("click", function(event) {
+    $(".new-tweet").slideToggle("slow");
+    $(".new-tweet").find("textarea").focus();
+  });
 
   //access message and keep it hidden before submit is pressed
   $message = $("#message");
@@ -85,17 +95,23 @@ $(document).ready(() => {
     $textLength = $text.length;
 
     if ($text === "" || $text === null) {
+
       $message.text("⚠️ Your message is empty, try again").slideDown();
       $textarea.focus();
+
     } else if ($textLength > 140) {
+
       $message.text("⚠️ Message is too long, please respect text limit").slideDown();
       $textarea.focus();
+
     } else {
-      $.post('/tweets', $serializedData, (response) => {
-            //console.log(response)  //Check if this should be removed.
-            loadtweets();
-            $("#tweet-text").val("")
-      })
+
+      $.post('/tweets', $serializedData, () => {
+        loadtweets();
+        $("#tweet-text").val("");
+
+      });
+      // readjust text box and hide message alert since tweet is valid.
       $message.hide();
       $textarea.val("").focus();
       $counter.text("140");
@@ -103,29 +119,17 @@ $(document).ready(() => {
   
   });
 
+  //Function that enables button to scroll to the top
+  const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+  const rootElement = document.documentElement;
+
+  function scrollToTop() {
+    // Scroll to top logic
+    rootElement.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+  scrollToTopBtn.addEventListener("click", scrollToTop);
 });
 
-// const serializedData = $(this).serialize();
-
-    // $text = serializedData.trim();
-    // $textLength = $text.length;
-    
-    // // console.log("text: ",$text);
-    // // console.log(serializedData);
-
-    // console.log($textLength);
-    // if ($text === "text=" || $text === null) {
-    //   // return alert("Message is empty, please type something to post");
-    //   $message.text("⚠️ Your message is empty, try again").slideDown();
-
-    // } else if ($textLength > 140) {
-    //   // return alert("Message is too long, please respect text limit");
-    //   $message.text("⚠️ Message is too long, please respect text limit").slideDown();
-    // } else {
-    //   // console.log("something")
-    //   $.post('/tweets', serializedData, (response) => {
-    //     console.log(response)  //Check if this should be removed.
-    //     loadtweets();
-    //     $("#tweet-text").val("")
-    //   })
-    // }
