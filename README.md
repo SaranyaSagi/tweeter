@@ -24,7 +24,7 @@ Javascript used to safely render insecure text by escaping XSS.The best part is 
 ![Error message](https://github.com/SaranyaSagi/tweeter/blob/master/docs/error.gif?raw=true)
 
 
-### ☑︎ Hover effects and scroll to top button
+### ☑︎ Animated new tweet toggle button, hover effects and scroll to top button
 ![Toggle button and scroll to top button](https://github.com/SaranyaSagi/tweeter/blob/master/docs/ezgif.com-gif-maker%20(2).gif?raw=true)
 
 
