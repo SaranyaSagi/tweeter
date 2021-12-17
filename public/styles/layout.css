@@ -21,14 +21,6 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
   
 }
-/* //only classes have dots */
-/* nav {
-  font-family: 'Bungee', cursive;
-} */
-
-/* .container{
-  margin-top: em;
-} */
 
 /*
 * Additional CSS can be defined below or in other CSS files, as per instructions
@@ -36,23 +28,6 @@ body {
 
 /* font-family: 'Bungee', cursive; */
 /* font-family: 'Source Sans Pro', sans-serif; */
-/* @media only screen and (min-width: 320px) {
-  .navBar {
-    width: 100%;
-    background: orange;
-  }
-
-  #bottomContent{
-    display: flex;
-    flex-direction: column;
-    margin-top: 5em
-  }
-
-  .container{
-    max-width: 90%;
-  }
-} */
-
 
 /* desktop */
 @media only screen and (min-width: 1024px){
@@ -79,20 +54,15 @@ body {
   }
 }
 
+/* for shrinked screen */
 @media only screen and (max-width: 1024px) {
+  
   .navBar {
     width: 100%;
     background: none;
-    /* position: absolute;
-    top: 0; */
     margin-bottom: 10em;
     
   }
-
-  /* .topHeader {
-    position: relative;
-    top: 0;
-  } */
 
   #bottomContent{
     display: flex;
@@ -104,3 +74,4 @@ body {
     max-width: 90%;
   }
 }
+
