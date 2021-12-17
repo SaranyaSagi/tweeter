@@ -13,15 +13,18 @@ nav {
   padding: 0 1.5em;
   justify-content: space-between;
   display: flex;
-  /* z-index: 10; */
 }
 
-
-nav span {
+#tweeter {
   font-family: 'Bungee', cursive;
   margin-top: 1em;
   font-size: 1.5em;
   margin-bottom: 0px;
+}
+
+nav span {
+  font-family: 'Bungee', cursive;
+  font-size: 1.5em;
 }
 
 .sideHeader {
@@ -31,10 +34,41 @@ nav span {
 
 .sideHeaderText {
   margin-bottom: 0px;
-} 
-.fa-angle-double-down{
-  margin-left: 3em;
-  margin-bottom: 1em;
-  color: red;
 }
 
+/* Added animation to button */
+.fa-angle-double-down{
+  margin-left: 3em;
+  margin-bottom: 0px;
+  color: red;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  transform-origin: bottom;
+  animation-name: bounce;
+  animation-timing-function: ease;
+}
+
+/* hover effect for compose button */
+.fa-angle-double-down:hover {
+  color: yellow;
+  animation-name: bounce;
+  animation-timing-function: ease;
+}
+
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* scroll to top button that shows up when scrolling down */
+#scrollToTopBtn {
+  background-color: red;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 48px;
+  width: 48px;
+}
