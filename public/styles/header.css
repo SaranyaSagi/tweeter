@@ -1,9 +1,6 @@
 /* Orange header with profile and name */
+
 header {
-  /* padding-top: 1em; */
-  /* padding-bottom: 5em;
-  margin-bottom: 5em; */
-  /* height: 450px;  */
   height: 400px;
   width: 100%;
   display: flex;
@@ -13,6 +10,7 @@ header {
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
 }
 
+/* the hexagon shaped profile picture */
 #hexagon{
   margin-top: 70px;
 }
@@ -25,6 +23,7 @@ header {
   color: white
 }
 
+/* the error message that only shows up during invalid tweet */
 #message {
   padding: 15px;
   margin-bottom: 20px;
