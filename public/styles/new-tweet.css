@@ -1,4 +1,6 @@
-/* in order of html for most part */
+/* in the order seen in html for most part */
+
+/* make width 90% of page as instucted*/
 main {
   width: 90%;
   margin: auto;
@@ -14,10 +16,7 @@ main {
   margin-top: 2em;
 }
 
-/* What are you humming about? */
-/* label {
-  font-weight: bold;
-} */
+/* add style to just placeholder not body text */
 ::placeholder{
   font-weight: bold;
   color: gray;
